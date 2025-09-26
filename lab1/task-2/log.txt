@@ -1,0 +1,26 @@
+[2023-10-25 09:15:03] 192.168.1.105 GET /static/css/style.css 200
+    > OK: File served successfully. User: admin@example.com
+
+[2023-10-25 14:12:15] 203.0.113.42 POST /api/login 200
+    > OK: User authentication SUCCESS. Account: user.petrov@domain.com
+
+[2023-10-26 08:45:21] 10.0.0.7 GET /admin/panel 403
+    > WARNING: Access DENIED for user: support@mycorp.org. Reason: Insufficient privileges.
+
+[2023-10-26 11:20:45] 198.51.100.111 GET /favicon.ico 404
+    > ERROR: Resource NOT FOUND. Requested by: anonymous (guest@email.host)
+
+[2023-10-26 16:13:01] 172.16.254.18 GET /index.html 200
+    > OK: Request from crawler (Googlebot). Contact: abuse@gmail.com
+
+[2023-10-27 03:00:05] SERVER EVENT
+    > INFO: MAINTENANCE notice sent to: admin@example.com, dev-team@example.com. Active connections: 12.
+
+[2023-10-27 10:13:12] 10.0.0.7 POST /api/contact 202
+    > OK: Contact form submitted from: feedback.client@partner-company.com
+
+[2023-10-28 00:01:00] SERVER EVENT
+    > INFO: Nightly backup STARTED. Notify: alerts@system.com
+
+[2023-10-28 00:15:00] SERVER EVENT
+    > OK: Nightly backup COMPLETED. Log sent: backup-reports@system.com
