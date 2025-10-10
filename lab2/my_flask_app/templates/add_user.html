@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Добавить нового пользователя</h2>
+
+    <form id="addUserForm" method="POST">
+        <div class="form-group">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required placeholder="Ваше имя"/>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="example@example.com"/>
+        </div>
+
+        <button type="submit" class="btn btn-success">Добавить пользователя</button>
+    </form>
+</div>
+{% endblock %}
