@@ -1,0 +1,33 @@
+<!-- blog/templates/blog/post_search.html -->
+{% extends 'blog/base.html' %}
+
+{% block title %}Результаты поиска{% endblock %}
+
+{% block content %}
+<h2>Результаты поиска для "{{ query }}"</h2>
+
+{% if posts %}
+    {% for post in posts %}
+        <div class="post">
+            <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+            {% if post.image %}
+                <img src="{{ post.image.url }}" alt="{{ post.title }}">
+            {% endif %}
+            <p>{{ post.content|truncatewords:30 }}</p>
+            <small>
+                Автор: {{ post.author }} |
+                Опубликовано: {{ post.published_date|date:"d.m.Y H:i" }} |
+                Категория: {{ post.category.name }}
+            </small>
+        </div>
+    {% endfor %}
+{% else %}
+    {% if query %}
+        <p>По запросу "{{ query }}" ничего не найдено.</p>
+    {% else %}
+        <p>Введите поисковый запрос.</p>
+    {% endif %}
+{% endif %}
+
+<a href="{% url 'post_list' %}">← Назад к списку постов</a>
+{% endblock %}
